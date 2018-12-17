@@ -1,0 +1,6 @@
+[submodule "lib/parsers"]
+	path = lib/parsers
+	url = git@github.com:analyzeDFIR/libadfir-parser.git
+[submodule "structures"]
+	path = structures
+	url = git@github.com:analyzeDFIR/analyzeEVTX-structures.git
