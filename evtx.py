@@ -21,8 +21,6 @@
 ## OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 ## SOFTWARE.
 
-import logging
-Logger = logging.getLogger(__name__)
 from binascii import crc32
 from io import SEEK_CUR
 from os import stat
