@@ -63,7 +63,7 @@ class EVTXRecord(ByteParser):
         '''
         header = evtxstructs.EVTXRecordHeader.parse_stream(self.stream)
         header.WriteTime = WindowsTime.parse_filetime(header.RawWriteTime)
-        return self._clean_value(header)
+        return header
 
 class EVTXChunk(ByteParser):
     '''
@@ -100,7 +100,7 @@ class EVTXChunk(ByteParser):
         Preconditions:
             N/A
         '''
-        return self._clean_value(evtxstructs.EVTXChunkHeader.parse_stream(self.stream))
+        return evtxstructs.EVTXChunkHeader.parse_stream(self.stream)
     @contexted
     def verify_header_checksum(self):
         '''
@@ -170,7 +170,7 @@ class EVTX(FileParser):
         Preconditions:
             N/A
         '''
-        return self._clean_value(evtxstructs.EVTXFileHeader.parse_stream(self.stream))
+        return evtxstructs.EVTXFileHeader.parse_stream(self.stream)
     def verify_size(self):
         '''
         Args:
